@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Matrícula</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .search-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            outline: none;
+            background-color: #fff;
+            color: #000;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        input[type="text"]::placeholder {
+            color: #888;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #666;
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #555;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Número de Matrícula</h1>
+        <form onsubmit="redirect(event)">
+            <input type="text" id="matricula" placeholder="Ingresa tu número de matrícula" required>
+            <br>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <script>
+        function redirect(event) {
+            event.preventDefault(); // Evita que se recargue la página
+            const matricula = document.getElementById('matricula').value.trim();
+            const validCode = "18399978413";
+            if (matricula === validCode) {
+                // Reemplaza 'https://example.com' con la URL base de tu sistema
+                const url = `https://www.facebook.com/andinaformaciones/`;
+                window.location.href = url;
+            } else {
+                alert('Código inválido. Por favor, intenta nuevamente.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -76,13 +76,16 @@
         function redirect(event) {
             event.preventDefault(); // Evita que se recargue la página
             const matricula = document.getElementById('matricula').value.trim();
-            const validCode = "18399978413";
-            if (matricula === validCode) {
-                // Reemplaza 'https://example.com' con la URL base de tu sistema
-                const url = `https://uisainternacional.github.io/Matricula/`;
-                window.location.href = url;
+            
+            const matriculas = {
+                "18399978413": "https://uisainternacional.github.io/Matricula/",
+                "1839997841-1": "https://uisainternacional.github.io/Matricula-A/"
+            };
+            
+            if (matriculas[matricula]) {
+                window.location.href = matriculas[matricula];
             } else {
-                alert('Número de Matricula inválido. Por favor, intenta nuevamente.');
+                alert('Número de Matrícula inválido. Por favor, intenta nuevamente.');
             }
         }
     </script>
